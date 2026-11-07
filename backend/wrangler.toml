@@ -1,0 +1,17 @@
+name = "clinic-companion"
+main = "src/worker.ts"
+compatibility_date = "2025-09-01"
+compatibility_flags = ["nodejs_compat"]
+
+# Sends due reminders and check-ins every 15 minutes (free on the Workers plan).
+[triggers]
+crons = ["*/15 * * * *"]
+
+[vars]
+GEMINI_MODEL = "gemini-2.5-flash"
+# DASHBOARD_ORIGIN = "https://clinic-companion-dashboard.pages.dev"
+
+# Secrets: set each with `npx wrangler secret put NAME`
+# SUPABASE_URL, SUPABASE_SERVICE_ROLE_KEY, GEMINI_API_KEY, TELEGRAM_BOT_TOKEN,
+# TELEGRAM_WEBHOOK_SECRET, ENCRYPTION_KEY, JOB_SECRET, ONCALL_CODE,
+# optional: RESEND_API_KEY, EMAIL_FROM
