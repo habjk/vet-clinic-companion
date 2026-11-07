@@ -1,0 +1,96 @@
+@import 'tailwindcss';
+
+/*
+  Palette: a cool clinical off-white and a scrubs green. Red and amber are reserved
+  strictly for triage urgency, so colour on this screen always means something.
+*/
+:root {
+  color-scheme: light;
+  --paper: #f6f8f7;
+  --surface: #ffffff;
+  --ink: #18221e;
+  --muted: #56655f;
+  --line: #d9e1dd;
+  --scrub: #2c6658;
+  --scrub-soft: #e3efeb;
+  --urgent: #b8322a;
+  --urgent-soft: #fbeceb;
+  --callback: #9a6514;
+  --callback-soft: #fbf2e1;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    color-scheme: dark;
+    --paper: #121816;
+    --surface: #1a2220;
+    --ink: #e5ece9;
+    --muted: #9caba4;
+    --line: #2b3633;
+    --scrub: #7dc4b0;
+    --scrub-soft: #1f312c;
+    --urgent: #ff8278;
+    --urgent-soft: #3a1d1b;
+    --callback: #e8b45c;
+    --callback-soft: #352a17;
+  }
+}
+
+@theme inline {
+  --color-paper: var(--paper);
+  --color-surface: var(--surface);
+  --color-ink: var(--ink);
+  --color-muted: var(--muted);
+  --color-line: var(--line);
+  --color-scrub: var(--scrub);
+  --color-scrub-soft: var(--scrub-soft);
+  --color-urgent: var(--urgent);
+  --color-urgent-soft: var(--urgent-soft);
+  --color-callback: var(--callback);
+  --color-callback-soft: var(--callback-soft);
+  --font-sans: 'Atkinson Hyperlegible', ui-sans-serif, system-ui, -apple-system, 'Segoe UI', sans-serif;
+}
+
+html,
+body {
+  background: var(--paper);
+  color: var(--ink);
+  font-family: var(--font-sans);
+  -webkit-font-smoothing: antialiased;
+}
+
+body {
+  padding-bottom: env(safe-area-inset-bottom, 0px);
+}
+
+:focus-visible {
+  outline: 3px solid var(--scrub);
+  outline-offset: 2px;
+  border-radius: 4px;
+}
+
+input,
+select,
+textarea {
+  background: var(--surface);
+  color: var(--ink);
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  padding: 0.55rem 0.7rem;
+  font: inherit;
+  width: 100%;
+}
+
+label {
+  display: grid;
+  gap: 0.3rem;
+  font-size: 0.9rem;
+  color: var(--muted);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  * {
+    transition: none !important;
+    animation: none !important;
+  }
+}
