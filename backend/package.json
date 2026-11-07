@@ -1,0 +1,32 @@
+{
+  "name": "clinic-companion-backend",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "wrangler dev",
+    "dev:node": "tsx watch src/node.ts",
+    "deploy": "wrangler deploy",
+    "build:node": "tsc -p tsconfig.json",
+    "start:node": "node dist/node.js",
+    "typecheck": "tsc --noEmit",
+    "test": "vitest run",
+    "seed": "tsx scripts/seed.ts",
+    "set-webhook": "tsx scripts/set-webhook.ts",
+    "eval": "tsx scripts/eval-triage.ts"
+  },
+  "dependencies": {
+    "@hono/node-server": "^2.1.6",
+    "@supabase/supabase-js": "^2.119.0",
+    "dotenv": "^18.0.9",
+    "hono": "^4.13.16",
+    "zod": "^4.6.7"
+  },
+  "devDependencies": {
+    "@types/node": "^26.6.6",
+    "tsx": "^4.23.15",
+    "typescript": "^7.0.2",
+    "vitest": "^5.1.0",
+    "wrangler": "^4.158.0"
+  }
+}
